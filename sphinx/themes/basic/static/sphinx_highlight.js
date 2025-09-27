@@ -79,6 +79,7 @@ const SphinxHighlight = {
       localStorage.getItem("sphinx_highlight_terms")
       || url.searchParams.get("highlight")
       || "";
+    if (!highlight) return;
     localStorage.removeItem("sphinx_highlight_terms");
     url.searchParams.delete("highlight");
     window.history.replaceState({}, "", url);
